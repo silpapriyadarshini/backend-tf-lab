@@ -1,8 +1,8 @@
-resource "aws_s3_bucket" "state_file_bucket" {
-    bucket = "talent-academy-silpa-lab-tfstates"
+resource "aws_s3_bucket" "state_file_bucket_new" {
+    bucket = "talent-academy-silpa-lab-tfstates-new"
     
     tags = {
-        Name = "talent-academy-silpa-lab-tfstates"
+        Name = "talent-academy-silpa-lab-tfstates-new"
         Environment = "Lab"
     }
 
@@ -12,7 +12,7 @@ resource "aws_s3_bucket" "state_file_bucket" {
 }
 
 resource "aws_s3_bucket_versioning" "version_my_bucket" {
-    bucket = aws_s3_bucket.state_file_bucket.id
+    bucket = aws_s3_bucket.state_file_bucket_new.id
 
     versioning_configuration {
       status = "Enabled"
